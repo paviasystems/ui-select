@@ -178,7 +178,7 @@ uis.directive('uiSelectMultiple', ['uiSelectMinErr','$timeout', function(uiSelec
           return;
         }
         $select.selected.push(item);
-        var locals = {};        
+        var locals = {};
         locals[$select.parserResult.itemName] = item;
 
         $timeout(function(){
@@ -261,11 +261,11 @@ uis.directive('uiSelectMultiple', ['uiSelectMinErr','$timeout', function(uiSelec
                 } else {
                   return curr;
                 }
-                
+
               } else {
                 // If nothing yet selected, select last item
-                return last;  
-              }              
+                return last;
+              }
               break;
             case KEY.DELETE:
               // Remove selected item and select next item
@@ -415,7 +415,7 @@ uis.directive('uiSelectMultiple', ['uiSelectMinErr','$timeout', function(uiSelec
           return false;
         }
         var hasDupe = arr.filter( function (origItem) {
-          if ( $select.search.toUpperCase() === undefined || origItem === undefined ) {
+          if ( $select.search.toUpperCase() === undefined || origItem === undefined || origItem === null ) {
             return false;
           }
           return origItem.toUpperCase() === $select.search.toUpperCase();
